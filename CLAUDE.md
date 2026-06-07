@@ -134,7 +134,7 @@ Quando o usuário pedir skill nova:
 ## Ferramentas conectadas
 
 - [ ] Notion
-- [x] LinkedIn (plugin linkedin-skills — publica via Publora, lê dados via Apify)
+- [x] LinkedIn (10 skills em .claude/skills/linkedin-* — publica via Publora, lê dados via Apify)
 - [x] Gmail
 - [x] Google Calendar
 - [ ] Meta Ads
