@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laplace Analytica Cognitive | Agência A.I. First de Marketing Digital</title>
+    <meta name="description"
+        content="Agência A.I. First de marketing digital. Inteligência artificial no centro de cada estratégia, campanha e resultado. Sua empresa no digital em 90 dias.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Laplace Analytica Cognitive | Agência A.I. First de Marketing Digital">
+    <meta property="og:description" content="Agência A.I. First de marketing digital. Inteligência artificial no centro de cada estratégia, campanha e resultado. Sua empresa no digital em 90 dias.">
+    <meta property="og:image" content="https://seudominio.com/logo.png">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Laplace Analytica Cognitive | Agência A.I. First de Marketing Digital">
+    <meta name="twitter:description" content="Agência A.I. First de marketing digital. Inteligência artificial no centro de cada estratégia, campanha e resultado. Sua empresa no digital em 90 dias.">
+    <meta name="twitter:image" content="https://seudominio.com/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Laplace Analytica Cognitive Logo">
+                <span>Laplace Analytica Cognitive</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#about">Quem Somos</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="javascript:void(0)" onclick="openContactModal()" class="btn btn-primary">Contato</a>
+                    </li>
+                </ul>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-bg-logo">
+                <img src="logo.png" alt="">
+            </div>
+            <div class="container hero-container-vertical">
+                <div class="hero-header">
+                    <div class="hero-badge reveal">A.I. First · Desde 2017</div>
+                    <h1 class="hero-title reveal">Marketing Digital com <span class="text-gradient">I.A. no Controle</span></h1>
+
+                    <div class="hero-promise reveal">
+                        <p>Nossa Promessa: <strong>Aumento de <span class="text-gradient">30%</span> em <span
+                                    class="text-gradient">90 dias</span></strong></p>
+                    </div>
+
+                    <p class="hero-subtitle reveal">Receba uma análise gratuita e veja como a I.A. pode transformar o seu negócio.</p>
+                </div>
+
+                <div class="capture-card reveal" id="capture-card">
+                    <div class="capture-info">
+                        <h3>Preencha o formulário ao lado para a Laplace entrar em contato com você.</h3>
+
+                        <div class="steps-container">
+                            <div class="step-item">
+                                <div class="step-icon">1</div>
+                                <div class="step-text">
+                                    <h4>Preencha todos os campos</h4>
+                                    <p>Só entramos em contato com quem preencher o formulário. Seus dados ficam seguros conosco.</p>
+                                </div>
+                            </div>
+                            <div class="step-line"></div>
+                            <div class="step-item">
+                                <div class="step-icon">2</div>
+                                <div class="step-text">
+                                    <h4>Retorno em menos de 5 minutos</h4>
+                                    <p>Fique atento ao WhatsApp. Nossa equipe entra em contato rapidamente.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="capture-form-wrapper">
+                        <form class="contact-form" id="leadForm">
+                            <div class="form-group">
+                                <input type="text" id="person_name" name="person_name" required placeholder="Seu Nome">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="company_name" name="company_name" required
+                                    placeholder="Nome da Empresa">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required placeholder="Email Corporativo">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" required placeholder="WhatsApp / Telefone">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="instagram" name="instagram"
+                                    placeholder="Instagram da Empresa (@)">
+                            </div>
+                            <div class="form-group">
+                                <select id="role" name="role" required>
+                                    <option value="" disabled selected>Sua função na empresa</option>
+                                    <option value="dono">Dono</option>
+                                    <option value="socio_founder">Sócio / Founder</option>
+                                    <option value="gerente">Gerente</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select id="revenue" name="revenue" required>
+                                    <option value="" disabled selected>Faturamento Mensal da Empresa</option>
+                                    <option value="ate_50k">Até R$ 50.000</option>
+                                    <option value="50k_100k">R$ 50.000 - R$ 100.000</option>
+                                    <option value="100k_500k">R$ 100.000 - R$ 500.000</option>
+                                    <option value="500k_1m">R$ 500.000 - R$ 1.000.000</option>
+                                    <option value="acima_1m">Acima de R$ 1.000.000</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select id="budget" name="budget" required>
+                                    <option value="" disabled selected>Investimento Mensal em Marketing</option>
+                                    <option value="ate_5k">Até R$ 5.000</option>
+                                    <option value="5k_10k">R$ 5.000 - R$ 10.000</option>
+                                    <option value="10k_30k">R$ 10.000 - R$ 30.000</option>
+                                    <option value="30k_50k">R$ 30.000 - R$ 50.000</option>
+                                    <option value="acima_50k">Acima de R$ 50.000</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Receber Análise Gratuita</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title reveal">Quem <span class="text-gradient">Somos</span></h2>
+                <div class="about-content reveal">
+                    <p>A <strong>Laplace Analytica Cognitive</strong> é uma agência A.I. First. Inteligência artificial não é uma ferramenta que usamos de vez em quando. É o centro de tudo: estratégia, criação de conteúdo, anúncios, análise de dados e tomada de decisão.</p>
+                    <p>Desde 2017 conectamos empresas ao digital. Hoje, com I.A. aplicada em cada etapa, entregamos resultados que antes exigiam equipes inteiras. Levamos negócios que dominam o offline para o digital do zero, com velocidade e resultado real.</p>
+                    <p>Nos encontre no Instagram: <a href="https://instagram.com/laplaceanalytica" target="_blank" class="link-highlight">@laplaceanalytica</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section services">
+            <div class="container">
+                <h2 class="section-title reveal">I.A. Aplicada em <span class="text-gradient">Cada Canal</span></h2>
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-icon">∞</div>
+                        <h3>Meta Ads</h3>
+                        <p>I.A. que cria, testa e otimiza campanhas no Facebook e Instagram em tempo real.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">G</div>
+                        <h3>Google Ads</h3>
+                        <p>I.A. que identifica o momento exato em que seu cliente está pronto para comprar.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">▶</div>
+                        <h3>YouTube Ads</h3>
+                        <p>Anúncios em vídeo com segmentação inteligente para quem realmente importa.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">♪</div>
+                        <h3>TikTok Ads</h3>
+                        <p>I.A. que descobre os padrões de engajamento da plataforma que mais cresce no mundo.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">K</div>
+                        <h3>Kwai Ads</h3>
+                        <p>Alcance mercados emergentes onde seus concorrentes ainda não chegaram.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">in</div>
+                        <h3>LinkedIn Ads</h3>
+                        <p>I.A. aplicada em estratégias B2B para fechar negócios com quem decide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section-title reveal">Resultados <span class="text-gradient">Reais</span></h2>
+                <p class="section-subtitle reveal">I.A. aplicada. Números que provam.</p>
+
+                <div class="projects-slider-wrapper reveal">
+                    <button class="slider-btn prev-btn" aria-label="Anterior">❮</button>
+                    <div class="projects-slider-container">
+                        <div class="projects-track">
+                            <!-- Existing Clients -->
+                            <div class="project-slide">
+                                <div class="project-mini-card">
+                                    <div class="project-icon">
+                                        <img src="sejaengajado_logo.png" alt="SejaEngajado Logo"
+                                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                    </div>
+                                    <h4>SejaEngajado.shop</h4>
+                                    <p>+560% faturamento (1º mês)</p>
+                                </div>
+                            </div>
+                            <div class="project-slide">
+                                <div class="project-mini-card">
+                                    <div class="project-icon">
+                                        <img src="cofredopix_logo.jpg" alt="Cofre do Pix Logo"
+                                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                    </div>
+                                    <h4>Cofre do Pix</h4>
+                                    <p>+30% base/mês</p>
+                                </div>
+                            </div>
+                            <div class="project-slide">
+                                <div class="project-mini-card">
+                                    <div class="project-icon">
+                                        <img src="oldwest_logo.jpg" alt="Old West Burger Logo"
+                                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                    </div>
+                                    <h4>Old West Burger</h4>
+                                    <p>Scale Delivery</p>
+                                </div>
+                            </div>
+                            <div class="project-slide">
+                                <div class="project-mini-card">
+                                    <div class="project-icon">
+                                        <img src="kadosh_logo.png" alt="Kadosh Lutas Logo"
+                                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                                    </div>
+                                    <h4>Kadosh Centro de Lutas</h4>
+                                    <p>0 a 100 alunos</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" aria-label="Próximo">❯</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section cta-section">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title reveal" style="margin-bottom: 1rem;">Enquanto você lê isso, seus concorrentes fazem marketing aplicado com I.A</h2>
+                <p class="section-subtitle reveal" style="margin-bottom: 2rem;">Análise gratuita. Sem enrolação. A gente te mostra o que a I.A. pode fazer pelo seu negócio.</p>
+                <button onclick="scrollToForm()" class="btn btn-primary btn-pulse reveal">Quero uma reunião</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Laplace Analytica Cognitive">
+                    <span>Laplace Analytica Cognitive</span>
+                </div>
+                <p class="copyright">&copy; 2026 Laplace Analytica Cognitive. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeContactModal()">&times;</span>
+            <div class="modal-header">
+                <h3>Solicite sua Análise</h3>
+                <p>Preencha os dados abaixo e entraremos em contato.</p>
+            </div>
+            <form class="contact-form" id="modalLeadForm">
+                <div class="form-group">
+                    <input type="text" name="person_name" required placeholder="Seu Nome">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="company_name" required placeholder="Nome da Empresa">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" required placeholder="Email Corporativo">
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" required placeholder="WhatsApp / Telefone">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="instagram" placeholder="Instagram da Empresa (@)">
+                </div>
+                <div class="form-group">
+                    <select name="role" required>
+                        <option value="" disabled selected>Sua função na empresa</option>
+                        <option value="dono">Dono</option>
+                        <option value="socio_founder">Sócio / Founder</option>
+                        <option value="gerente">Gerente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="revenue" required>
+                        <option value="" disabled selected>Faturamento Mensal da Empresa</option>
+                        <option value="ate_50k">Até R$ 50.000</option>
+                        <option value="50k_100k">R$ 50.000 - R$ 100.000</option>
+                        <option value="100k_500k">R$ 100.000 - R$ 500.000</option>
+                        <option value="500k_1m">R$ 500.000 - R$ 1.000.000</option>
+                        <option value="acima_1m">Acima de R$ 1.000.000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="budget" required>
+                        <option value="" disabled selected>Investimento Mensal em Marketing</option>
+                        <option value="ate_5k">Até R$ 5.000</option>
+                        <option value="5k_10k">R$ 5.000 - R$ 10.000</option>
+                        <option value="10k_30k">R$ 10.000 - R$ 30.000</option>
+                        <option value="30k_50k">R$ 30.000 - R$ 50.000</option>
+                        <option value="acima_50k">Acima de R$ 50.000</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Receber Análise Gratuita</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
